@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>พอร์ตโฟลิโอ | ชื่อของคุณ</title>
-<meta name="description" content="พอร์ตโฟลิโอแสดงผลงานและโปรเจกต์ของฉัน">
+<title>พอร์ตโฟลิโอ | นายณัฐวัชต์ รื่นเรืองฤทธิ์</title>
+<meta name="description" content="พอร์ตโฟลิโอแสดงผลงานและโปรเจกต์ของผม">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -96,7 +96,7 @@
     display: grid; place-items: center; color: #fff; font-size: 3rem; font-weight: 700;
     overflow: hidden; border: 4px solid var(--surface); box-shadow: 0 0 0 2px var(--line);
   }
-  .avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; }
   .profile-card h3 { font-size: 1.25rem; }
   .profile-card .role { color: var(--muted); font-size: .95rem; margin-bottom: 16px; }
   .contact { list-style: none; text-align: left; display: grid; gap: 8px; font-size: .94rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 16px; }
@@ -141,11 +141,7 @@
   .activity-box img { display: block; min-width: 680px; width: 100%; }
   [data-theme="dark"] .activity-box img { filter: invert(.92) hue-rotate(180deg); }
 
-  /* ---------- Footer ---------- */
-  footer { border-top: 1px solid var(--line); padding: 32px 0 48px; color: var(--muted); text-align: center; font-size: .95rem; }
-  .social { display: flex; justify-content: center; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
-  .social a { padding: 8px 18px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); font-size: .9rem; color: var(--text); }
-  .social a:hover { border-color: var(--accent); color: var(--accent); }
+  main { padding-bottom: 32px; }
   .hidden { display: none !important; }
 </style>
 </head>
@@ -157,7 +153,7 @@
   <div class="wrap">
     <a href="#top" class="brand" id="brand">my<span>.portfolio</span></a>
     <ul>
-      <li><a href="#about">เกี่ยวกับฉัน</a></li>
+      <li><a href="#about">เกี่ยวกับผม</a></li>
       <li><a href="#projects">ผลงาน</a></li>
       <li><a href="#activity" id="nav-activity" class="hidden">กิจกรรม</a></li>
       <li><a href="#contact">ติดต่อ</a></li>
@@ -173,12 +169,12 @@
       <span class="eyebrow" id="hero-role">Web Developer</span>
       <h1>สร้างสรรค์<em>ประสบการณ์ดิจิทัล</em><br>ที่ใช้งานได้จริง</h1>
       <p class="lead" id="hero-tagline">
-        สวัสดีครับ/ค่ะ ฉันสนใจการพัฒนาเว็บแอปพลิเคชันและระบบสารสนเทศ
+        สวัสดีครับ ผมสนใจการพัฒนาเว็บแอปพลิเคชันและระบบสารสนเทศ
         ตั้งแต่ออกแบบระบบ ฐานข้อมูล ไปจนถึงหน้าเว็บที่ใช้งานง่าย
       </p>
       <div class="cta">
-        <a class="btn primary" href="#projects">ดูผลงานของฉัน →</a>
-        <a class="btn ghost" href="#contact">ติดต่อฉัน</a>
+        <a class="btn primary" href="#projects">ดูผลงานของผม →</a>
+        <a class="btn ghost" href="#contact">ติดต่อผม</a>
       </div>
       <div class="stack" aria-label="Tech stack">
         <span class="chip">HTML</span>
@@ -190,7 +186,7 @@
       </div>
     </div>
 
-    <aside class="profile-card">
+    <aside class="profile-card" id="contact">
       <!-- ถ้ามีรูปโปรไฟล์: วางไฟล์ชื่อ profile.jpg ไว้โฟลเดอร์เดียวกับ index.html เว็บจะใช้รูปนี้ให้อัตโนมัติ -->
       <div class="avatar" id="avatar">ก</div>
       <h3 id="name">ชื่อ นามสกุล</h3>
@@ -199,6 +195,7 @@
         <li>✉️ <a id="c-email" href="mailto:you@example.com">you@example.com</a></li>
         <li>📞 <span id="c-phone">0X-XXX-XXXX</span></li>
         <li>📍 <span id="c-loc">ประเทศไทย</span></li>
+        <li>🐙 <a id="c-github" href="https://github.com/" target="_blank" rel="noopener">github.com</a></li>
       </ul>
     </aside>
   </div>
@@ -206,7 +203,7 @@
 
 <main>
 
-<!-- ============ เกี่ยวกับฉัน ============ -->
+<!-- ============ เกี่ยวกับผม ============ -->
 <section id="about" class="about">
   <div class="wrap">
     <div class="sec-head">
@@ -214,7 +211,7 @@
       <h2>สวัสดี! ยินดีที่ได้รู้จัก 👋</h2>
     </div>
     <p>
-      ฉันชอบเปลี่ยนปัญหาในชีวิตจริงให้เป็นระบบที่ใช้งานได้ ผ่านการวิเคราะห์และออกแบบระบบ
+      ผมชอบเปลี่ยนปัญหาในชีวิตจริงให้เป็นระบบที่ใช้งานได้ ผ่านการวิเคราะห์และออกแบบระบบ
       พัฒนาเว็บแอปพลิเคชัน และเรียนรู้เทคโนโลยีใหม่ๆ อย่างต่อเนื่อง
       <!-- ✏️ แก้ข้อความแนะนำตัวตรงนี้ให้เป็นของคุณเอง -->
     </p>
@@ -305,28 +302,17 @@
 
 </main>
 
-<!-- ============ ติดต่อ / Footer ============ -->
-<footer id="contact">
-  <div class="wrap">
-    <div class="social" id="social">
-      <a id="s-github" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
-      <a id="s-email" href="mailto:you@example.com">Email</a>
-    </div>
-    <p>Made with ❤️ by <span id="foot-name">ชื่อของคุณ</span> | <span id="year"></span></p>
-  </div>
-</footer>
-
 <script>
 /* =====================================================
    ✏️ แก้ข้อมูลของคุณตรงนี้ที่เดียว (ไม่ต้องแก้ HTML ด้านบน)
    ===================================================== */
 const CONFIG = {
-  name: "ชื่อ นามสกุล",          // ชื่อที่จะแสดง
+  name: "นายณัฐวัชต์ รื่นเรืองฤทธิ์",   // ชื่อที่จะแสดง
   role: "Web Developer",          // ตำแหน่ง/สายงาน
-  email: "you@example.com",
-  phone: "0X-XXX-XXXX",
+  email: "ttime0703@gmail.com",
+  phone: "061-989-4117",
   location: "ประเทศไทย",
-  githubUsername: ""              // ใส่ username GitHub เพื่อแสดงกราฟกิจกรรม เช่น "yourname"
+  githubUsername: "timetime48"    // username GitHub (ใส่เพื่อแสดงกราฟกิจกรรม ลบให้ว่าง "" ถ้าไม่ต้องการ)
 };
 
 /* ---------- ใส่ข้อมูลลงหน้าเว็บ ---------- */
@@ -334,22 +320,27 @@ const CONFIG = {
   const $ = id => document.getElementById(id);
   document.title = "พอร์ตโฟลิโอ | " + CONFIG.name;
   $("name").textContent = CONFIG.name;
-  $("foot-name").textContent = CONFIG.name;
   $("hero-role").textContent = CONFIG.role;
-  $("avatar").textContent = (CONFIG.name.trim()[0] || "?");
+  /* ตัวอักษรในวงกลมโปรไฟล์: ข้ามคำนำหน้าชื่อ (นาย/นาง/นางสาว/น.ส.) */
+  const bare = CONFIG.name.trim().replace(/^(นางสาว|น\.ส\.|นาย|นาง)\s*/, "");
+  $("avatar").textContent = (bare[0] || "?");
   $("c-email").textContent = CONFIG.email;
   $("c-email").href = "mailto:" + CONFIG.email;
-  $("s-email").href = "mailto:" + CONFIG.email;
   $("c-phone").textContent = CONFIG.phone;
   $("c-loc").textContent = CONFIG.location;
-  $("year").textContent = new Date().getFullYear();
 
   if (CONFIG.githubUsername) {
-    $("s-github").href = "https://github.com/" + CONFIG.githubUsername;
+    $("c-github").href = "https://github.com/" + CONFIG.githubUsername;
+    $("c-github").textContent = "github.com/" + CONFIG.githubUsername;
     $("brand").innerHTML = CONFIG.githubUsername + "<span>.github.io</span>";
-    $("ghchart").src = "https://ghchart.rshah.org/4f46e5/" + encodeURIComponent(CONFIG.githubUsername);
-    $("activity").style.display = "block";
-    $("nav-activity").classList.remove("hidden");
+    /* แสดงกราฟกิจกรรมเฉพาะเมื่อโหลดรูปสำเร็จ ถ้าโหลดไม่ได้จะซ่อนทั้งส่วน */
+    const chart = $("ghchart");
+    chart.onload = () => {
+      $("activity").style.display = "block";
+      $("nav-activity").classList.remove("hidden");
+    };
+    chart.onerror = () => { $("activity").style.display = "none"; };
+    chart.src = "https://ghchart.rshah.org/4f46e5/" + encodeURIComponent(CONFIG.githubUsername);
   }
 
   /* รูปโปรไฟล์: ถ้ามีไฟล์ profile.jpg จะใช้รูปนี้แทนตัวอักษร */
