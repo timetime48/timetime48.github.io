@@ -244,46 +244,8 @@
       <h2>ผลงานและโปรเจกต์</h2>
     </div>
 
-    <div class="projects">
-
-      <!-- ===== โปรเจกต์ 1 ===== -->
-      <article class="card project">
-        <span class="badge">E-Commerce</span>
-        <h3>Craft Work — เว็บไซต์ขายสินค้าหัตถกรรม</h3>
-        <p>เว็บไซต์ขายสินค้าหัตถกรรมออนไลน์ มีทั้งหน้าร้านสำหรับลูกค้าและระบบหลังบ้านสำหรับผู้ดูแลจัดการสินค้า</p>
-        <div class="tags"><span>PHP</span><span>MySQL</span><span>Admin Panel</span></div>
-        <!-- ใส่ลิงก์จริงแทน # ได้ เช่น https://github.com/ชื่อผู้ใช้/ชื่อrepo -->
-        <a class="more" href="#">ดูโปรเจกต์ →</a>
-      </article>
-
-      <!-- ===== โปรเจกต์ 2 ===== -->
-      <article class="card project">
-        <span class="badge">โครงงาน</span>
-        <h3>ระบบสารสนเทศส่งเสริมการท่องเที่ยวโดยชุมชนบ้านเชียง</h3>
-        <p>เว็บแอปพลิเคชันส่งเสริมการท่องเที่ยวโดยชุมชนบ้านเชียง จ.อุดรธานี พร้อมเอกสารวิเคราะห์ระบบด้วย DFD</p>
-        <div class="tags"><span>PHP</span><span>MySQL</span><span>Bootstrap 5</span><span>DFD</span></div>
-        <a class="more" href="#">ดูโปรเจกต์ →</a>
-      </article>
-
-      <!-- ===== โปรเจกต์ 3 ===== -->
-      <article class="card project">
-        <span class="badge">ข้อเสนอโครงงาน</span>
-        <h3>ระบบบริหารจัดการอู่ร่วมมิตร</h3>
-        <p>ระบบบริหารจัดการอู่ซ่อมรถ ครอบคลุมการวิเคราะห์และออกแบบระบบ พร้อม ER Diagram ของฐานข้อมูล</p>
-        <div class="tags"><span>System Design</span><span>ER Diagram</span></div>
-        <a class="more" href="#">ดูโปรเจกต์ →</a>
-      </article>
-
-      <!-- ===== โปรเจกต์ 4 ===== -->
-      <article class="card project">
-        <span class="badge">AI / ML</span>
-        <h3>งานแล็บวิชาปัญญาประดิษฐ์</h3>
-        <p>ทำแล็บ Machine Learning ด้วย Decision Tree, Naive Bayes และ K-NN บนชุดข้อมูลที่เลือกเอง</p>
-        <div class="tags"><span>Decision Tree</span><span>Naive Bayes</span><span>K-NN</span></div>
-        <a class="more" href="#">ดูโปรเจกต์ →</a>
-      </article>
-
-    </div>
+    <!-- การ์ดโปรเจกต์สร้างจากรายการ PROJECTS ในสคริปต์ด้านล่าง (แก้ที่นั่นที่เดียว) -->
+    <div class="projects" id="projectList"></div>
   </div>
 </section>
 
@@ -314,6 +276,85 @@ const CONFIG = {
   location: "ประเทศไทย",
   githubUsername: "timetime48"    // username GitHub (ใส่เพื่อแสดงกราฟกิจกรรม ลบให้ว่าง "" ถ้าไม่ต้องการ)
 };
+
+/* =====================================================
+   ✏️ รายการโปรเจกต์ (เพิ่ม/ลบ/แก้ได้ที่นี่)
+   - title: ชื่อโปรเจกต์   - type: ป้ายประเภทด้านบนการ์ด
+   - desc: คำอธิบายสั้นๆ   - tags: เทคโนโลยีที่ใช้
+   - link: ลิงก์โปรเจกต์ (เว้นว่าง "" = ไม่แสดงปุ่ม "ดูโปรเจกต์")
+   ===================================================== */
+const PROJECTS = [
+  {
+    title: "ระบบจองคิวออนไลน์สำหรับร้านบริการ",
+    type: "Web App",
+    desc: "เว็บแอปให้ลูกค้าเลือกบริการ วันและเวลาที่ว่างเพื่อจองคิวเอง พร้อมหน้าผู้ดูแลสำหรับยืนยันหรือยกเลิกคิว",
+    tags: ["PHP", "MySQL", "Bootstrap 5"],
+    link: ""
+  },
+  {
+    title: "ระบบจัดการสต็อกสินค้า",
+    type: "ระบบจัดการ",
+    desc: "ระบบบันทึกรับเข้า-เบิกออกสินค้า แจ้งเตือนเมื่อสินค้าใกล้หมด และสรุปรายงานสต็อกคงเหลือ",
+    tags: ["PHP", "MySQL", "Chart.js"],
+    link: ""
+  },
+  {
+    title: "Weather Dashboard",
+    type: "Dashboard",
+    desc: "แดชบอร์ดแสดงสภาพอากาศปัจจุบันและพยากรณ์ล่วงหน้า ค้นหาตามชื่อจังหวัดหรือเมืองได้",
+    tags: ["HTML", "CSS", "JavaScript", "REST API"],
+    link: ""
+  },
+  {
+    title: "Task Manager — จัดการงานประจำวัน",
+    type: "Web App",
+    desc: "เว็บแอปจดและจัดหมวดหมู่งานที่ต้องทำ ติ๊กเมื่อเสร็จ กรองตามสถานะ และบันทึกข้อมูลไว้ในเบราว์เซอร์",
+    tags: ["JavaScript", "LocalStorage", "Responsive"],
+    link: ""
+  },
+  {
+    title: "ทำนายผลการเรียนด้วย Machine Learning",
+    type: "AI / ML",
+    desc: "สร้างโมเดลทำนายผลการเรียนจากพฤติกรรมการเรียน เปรียบเทียบความแม่นยำของ Decision Tree, Naive Bayes และ K-NN",
+    tags: ["Python", "scikit-learn", "Pandas"],
+    link: ""
+  },
+  {
+    title: "Landing Page ร้านกาแฟ",
+    type: "UI Design",
+    desc: "หน้าเว็บแนะนำร้านกาแฟ แสดงเมนู โปรโมชัน และแผนที่ร้าน ออกแบบให้ดูดีทั้งบนมือถือและคอมพิวเตอร์",
+    tags: ["HTML", "CSS", "Responsive"],
+    link: ""
+  }
+];
+
+/* ---------- สร้างการ์ดโปรเจกต์ ---------- */
+(function () {
+  const box = document.getElementById("projectList");
+  PROJECTS.forEach(p => {
+    const card = document.createElement("article");
+    card.className = "card project";
+
+    const badge = document.createElement("span");
+    badge.className = "badge"; badge.textContent = p.type;
+
+    const h = document.createElement("h3"); h.textContent = p.title;
+    const d = document.createElement("p");  d.textContent = p.desc;
+
+    const tags = document.createElement("div"); tags.className = "tags";
+    p.tags.forEach(t => { const s = document.createElement("span"); s.textContent = t; tags.appendChild(s); });
+
+    card.append(badge, h, d, tags);
+
+    if (p.link) {
+      const a = document.createElement("a");
+      a.className = "more"; a.href = p.link; a.target = "_blank"; a.rel = "noopener";
+      a.textContent = "ดูโปรเจกต์ →";
+      card.appendChild(a);
+    }
+    box.appendChild(card);
+  });
+})();
 
 /* ---------- ใส่ข้อมูลลงหน้าเว็บ ---------- */
 (function () {
